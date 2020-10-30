@@ -14,3 +14,4 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin docker.io
   - docker push $IMAGE_NAME:$TAG
   - docker push $IMAGE_NAME:latest
+  - echo prova
