@@ -2,12 +2,12 @@ services:
   - docker
 dist: focal
 env:
-global:
-  - TZ=UTC
-  - IMAGE_NAME="danysk/lss-pluto"
+  global:
+    - TZ=UTC
+    - IMAGE_NAME="maciabit/lss-pluto"
 
 before_script:
-  - export TAG="$(git describe || git log -n1 --date=format:'%Y-%m-%dT%H%M%S' --format=%cd)$(date +%Y-%m-%d_%H%M)
+  - export TAG="$(git describe || git log -n1 --date=format:'%Y-%m-%dT%H%M%S' --format=%cd)$(date +%Y-%m-%d_%H%M)"
 
 script:
   - docker build . -t $IMAGE_NAME:latest -t $IMAGE_NAME:$TAG .
